@@ -6,6 +6,9 @@ use Illuminate\Http\Resources\MissingValue;
 
 class articleResource extends JsonResource
 {
+    public $with=[
+
+    ];
     /**
      * Transform the resource into an array.
      *
@@ -18,9 +21,9 @@ class articleResource extends JsonResource
 //        dd($this->when($request->with==='user',$this->users),$request->with);
 //        $routePrefix=$request->segments()[1] ?? null;
 //            dd($request->segments()[1]);
-       $this->load('users');
+//       $this->load('users');
 //            dd($this->whenLoaded('users','bale','na'));
-
+//dd($this->load('users'));
         return [
             'id' => $this->id,
             'title' => $this->title,

@@ -14,16 +14,19 @@ class AuthController extends Controller
 //        $a='guard';
 //        dd(auth()->guard('api'));
 //        dd($request->password);
+//        dd('test');
         auth()->attempt([
             'email' => $request->username,
             'password' => $request->password
         ]);
 
-        if (auth()->check()) {
+        if(auth()->check()) {
 //            dd(auth()->check());
-            return response([
-                'token' => auth()->user()->generatetoken(),
-            ]);
+//            dd(auth()->user()->createToken('test'));
+            $token= auth()->user()->createToken('test'.auth()->user()->id);
+//            dd($token->tojson());
+            return $token->accessToken;
+
 //            return auth()->user()->generatetoken();
         }
 //        dd($request->email);

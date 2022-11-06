@@ -15,9 +15,9 @@ class ArticleController extends Controller
     //
     public function index()
     {
-        $articles = Article::paginate(3);
+        $articles = Article::all();
 //        dd($articles);
-        $articles = new articleResourceCollection($articles);
+        $articles = new articleResourceCollection($articles->load('users'));
 //        $articles=articleResourceCollection::collection($articles);
         return $articles;
     }
@@ -26,8 +26,9 @@ class ArticleController extends Controller
     {
 //        try {
 //        $i=8/0;
+//        dd($id);
         $article = Article::findOrFail($id);
-//            dd($article->load('users'));
+//        $article->load('users');
         $article = new articleResource($article->load('users'));
 //            dd($article->whenLoaded());
 //        dd($article->when);

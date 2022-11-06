@@ -59,6 +59,7 @@ class Handler extends ExceptionHandler
 
     public function render($request,Throwable $exception)
     {
+        dd($exception->getMessage());
         if ($request->wantsJson()) {
             //add Accept: application/json in request
 //            dd($request->wantsJson());

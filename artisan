@@ -29,9 +29,9 @@ $app = require_once __DIR__.'/bootstrap/app.php';
 | or another output device for the developers. Here goes nothing!
 |
 */
-
+//dd($_SERVER['argv'],$_SERVER);
 $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
-
+//dd($kernel);
 $status = $kernel->handle(
     $input = new Symfony\Component\Console\Input\ArgvInput,
     new Symfony\Component\Console\Output\ConsoleOutput

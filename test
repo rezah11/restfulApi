@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+//echo 'salam';
+$args=array_slice($argv,1);
+//$x=array_splice($args,1,3);
+//var_dump(array_slice($args,0,1));
+//var_dump($args[0]);
+
+switch ($args[0] ?? null){
+    case 'salam' :
+        echo 'salam be to ay yaar';
+        break;
+    default :
+        echo 'nashenas';
+
+}
